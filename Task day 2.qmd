@@ -1,0 +1,35 @@
+---
+title: "Tasks_day_2"
+format: html
+editor: visual
+---
+
+## Attach the `{tidyverse` and `{palmerpenguins}`
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## Make your project a version-controlled repo, with an upstream GitHub repo
+
+```{r}
+usethis::use_git()
+usethis::use_github()
+
+```
+
+### **Find derivatives using R**
+
+Find the slope of  at 
+
+```{r}
+# 
+my_expressionp <- expression(x^2)
+```
+
+```{r}
+# 
+my_derivative <- D(expr = my_expression, name = "x")
+my_derivative
+```
