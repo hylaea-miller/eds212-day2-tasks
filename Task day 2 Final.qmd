@@ -1,0 +1,44 @@
+---
+title: "tesk1"
+format: html
+editor: visual
+---
+
+### **Find derivatives using R**
+
+```{r}
+library(palmerpenguins)
+library(tidyverse)
+```
+
+```{r}
+my_expression <- expression(x^2)
+```
+
+```{r}
+my_derivative <- D(expr = my_expression, name = "x")
+my_derivative
+```
+
+```{r}
+x <- 3
+```
+
+```{r}
+eval(my_derivative)
+```
+
+## **Make another penguin plot**
+
+```{r}
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
+  geom_point(aes(color = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "species",
+       y = "Flipper length (mm)",
+       title = "Flipper lenght x species",
+       subtitle = "Palmer Archipelago, Antarctice (2007 - 2009)",
+       caption = "Collected by Dr. Kristen Gorman and colleagues at Palmer Station LTER") +
+  facet_wrap(~island) +
+  theme_minimal()
+```
