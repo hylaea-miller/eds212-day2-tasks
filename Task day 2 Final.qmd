@@ -28,17 +28,31 @@ x <- 3
 eval(my_derivative)
 ```
 
+```{r}
+#Find the slope
+my_expression <- expression(2 * (3 * a + 2)^4 - 5)
+my_derivative <- D(expr = my_expression, name = "a")
+a = 1.2
+my_derivative
+eval(my_derivative)
+```
+
+```{r}
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point() +
+  labs(title = "Penguin bill sizes by species", 
+       x = "Bill Length (mm)",
+       y = "Bill Depth (mm)")
+```
+
 ## **Make another penguin plot**
 
 ```{r}
 ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
-  geom_point(aes(color = species)) +
-  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  geom_jitter(aes(color = species)) +
   labs(x = "species",
        y = "Flipper length (mm)",
-       title = "Flipper lenght x species",
+       title = "Flipper lenght by species",
        subtitle = "Palmer Archipelago, Antarctice (2007 - 2009)",
-       caption = "Collected by Dr. Kristen Gorman and colleagues at Palmer Station LTER") +
-  facet_wrap(~island) +
-  theme_minimal()
+       caption = "Collected by Dr. Kristen Gorman and colleagues at Palmer Station LTER")
 ```
